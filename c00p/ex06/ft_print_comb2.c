@@ -1,43 +1,36 @@
-#include <stdio.h>
+#include <unistd.h>
 
-void ft_print_comb2(void)
+void	ft_put_numbers(int a, int b)
 {
-    char i = 0;
-    char j = i + 1;
+	char	c;
 
-    char c1 = (i / 10) + '0';
-    char c2 = (i % 10) + '0';
-
-    char c3 = (j / 10) + '0';
-    char c4 = (j % 10) + '0';
-    while (i <= 98)
-    {
-        j = i + 1;
-        while (j <= 99)
-        {
-            c1 = (i / 10) + '0';
-            c2 = (i % 10) + '0';
-
-            c3 = (j / 10) + '0';
-            c4 = (j % 10) + '0';
-
-            write(1, &c1, 1);
-            write(1, &c2, 1);
-            write(1, " ", 1);
-            write(1, &c3, 1);
-            write(1, &c4, 1);
-            if(!(i == 98 && j == 99))
-            {
-                write(1, ", ", 2);
-            }
-            j++;
-        }
-        i++;
-    }
+	c = (a / 10) + '0';
+	write(1, &c, 1);
+	c = (a % 10) + '0';
+	write(1, &c, 1);
+	write(1, " ", 1);
+	c = (b / 10) + '0';
+	write(1, &c, 1);
+	c = (b % 10) + '0';
+	write(1, &c, 1);
 }
 
-int main(void)
+void	ft_print_comb2(void)
 {
-    ft_print_comb2();
-    return 0;
+	int	a;
+	int	b;
+
+	a = 0;
+	while (a <= 98)
+	{
+		b = a + 1;
+		while (b <= 99)
+		{
+			ft_put_numbers(a, b);
+			if (!(a == 98 && b == 99))
+				write(1, ", ", 2);
+			b++;
+		}
+		a++;
+	}
 }

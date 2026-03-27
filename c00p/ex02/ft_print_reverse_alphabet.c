@@ -1,8 +1,8 @@
 #include <unistd.h>
 
-void ft_print_reverse_alphabet(void)
+void    ft_print_reverse_alphabet(void)
 {
-    char c;
+    char    c;
     
     c = 'z';
     while (c >= 'a')
@@ -10,11 +10,4 @@ void ft_print_reverse_alphabet(void)
         write(1, &c, 1);
         c--;
     }
-
-}
-
-int main(void)
-{
-    ft_print_reverse_alphabet();
-    return (0);
 }
